@@ -3,6 +3,7 @@ import 'package:first_app/models/item.dart';
 import 'package:first_app/screens/categories.dart';
 import 'package:first_app/screens/filters.dart';
 import 'package:first_app/screens/items.dart';
+import 'package:first_app/screens/buy.dart';
 import 'package:first_app/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -68,6 +69,10 @@ class _TabsScreenState extends State<TabsScreen> {
       setState(() {
         _selectedfilters = result ?? kInitialFilters;
       });
+    } else if (identifier == 'buy') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (ctx) => const GoldPriceApp(),
+      ));
     }
   }
 
